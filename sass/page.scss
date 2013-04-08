@@ -79,6 +79,13 @@ table#example {
     }
   }
   td {
+    &.name {
+      width: 240px;
+    }
+    &.ceuvideo {
+      max-width: 200px;
+      overflow: hidden;
+    }
   }
 }
 

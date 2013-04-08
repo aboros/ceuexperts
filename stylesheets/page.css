@@ -89,8 +89,17 @@ table#example tr.odd td.sorting_1 {
 table#example tr.even td.sorting_1 {
   background-color: #f2f2f2;
 }
-
+/* line 82, ../sass/page.scss */
+table#example td.name {
+  width: 240px;
+}
 /* line 85, ../sass/page.scss */
+table#example td.ceuvideo {
+  max-width: 200px;
+  overflow: hidden;
+}
+
+/* line 92, ../sass/page.scss */
 #example_filter {
   width: auto;
   float: none;

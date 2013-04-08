@@ -25,7 +25,7 @@
         "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json",
         
         "aoColumns": [                 
-          { "mData": "gsx$lastname.$t", "sClass": "name-last" },
+          { "mData": "gsx$lastname.$t", "sClass": "name" },
           { "mData": "gsx$firstname.$t", "sClass": "name-first" },
           { "mData": "gsx$departmentunit.$t", "sClass": "unit" },
           { "mData": "gsx$title.$t", "sClass": "title" },
