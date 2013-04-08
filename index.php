@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head lang="en" xml:lang="en">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="language" content="english" />
 	<title>CEU Experts</title>
   <style type="text/css" title="currentStyle">
   @import "stylesheets/table.css";
