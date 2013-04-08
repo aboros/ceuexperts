@@ -1,0 +1,97 @@
+@import "base";
+
+html {
+  font-family: $base-font-family;
+  font-size: 100% * ($base-font-size / 16px); /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  /* Establishes a vertical rhythm unit using $base-line-height. */
+  @include adjust-leading-to(1);
+}
+
+body {
+  background: white url(../images/header_bg.png) no-repeat scroll left top;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:active {
+    color: $color-link;
+    text-decoration: none;
+  }
+  &:hover {
+    color: adjust-lightness($color-link, -10);
+    text-decoration: none;
+    border-bottom: 1px dotted $color-link;
+  }
+}
+
+#page {
+  margin: 0 $h1-font-size $h1-font-size;
+}
+
+#header {
+  height: 79px;
+  margin-bottom: 1em;
+}
+
+#description {
+  @include adjust-font-size-to( 12px );
+}
+
+#footer {
+  border-top: 1px dotted $color-grey;
+  @include adjust-font-size-to( 12px );
+}
+
+h1 {
+  font-size: $h1-font-size;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  float: left;
+  height: 79px;
+  line-height: 79px;
+  margin: 0;
+}
+
+table#example {
+  @include adjust-font-size-to(12px);
+  margin-bottom: $h1-font-size;
+  thead {
+    th {
+      border-bottom: none;
+    }
+  }
+  tr.odd {
+    background-color: $color-grey;
+    td.sorting_1 {
+      background-color: adjust-lightness($color-grey, 5);
+    }
+  }
+  tr.even {
+    td.sorting_1 {
+      background-color: adjust-lightness($color-grey, 8);
+    }
+  }
+  td {
+    &.name-first,
+    &.name-last {
+      @include adjust-font-size-to( $h2-font-size );
+    }
+  }
+}
+
+#example_filter {
+  width: auto;
+  float: none;
+  text-align: left;
+  padding: 1em;
+  background-color: $color-grey;
+  width: 180px;
+  margin: $h1-font-size auto;
+}

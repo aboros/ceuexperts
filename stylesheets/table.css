@@ -1,0 +1,670 @@
+/*
+ *  File:         demo_table.css
+ *  CVS:          $Id$
+ *  Description:  CSS descriptions for DataTables demo pages
+ *  Author:       Allan Jardine
+ *  Created:      Tue May 12 06:47:22 BST 2009
+ *  Modified:     $Date$ by $Author$
+ *  Language:     CSS
+ *  Project:      DataTables
+ *
+ *  Copyright 2009 Allan Jardine. All Rights Reserved.
+ *
+ * ***************************************************************************
+ * DESCRIPTION
+ *
+ * The styles given here are suitable for the demos that are used with the standard DataTables
+ * distribution (see www.datatables.net). You will most likely wish to modify these styles to
+ * meet the layout requirements of your site.
+ *
+ * Common issues:
+ *   'full_numbers' pagination - I use an extra selector on the body tag to ensure that there is
+ *     no conflict between the two pagination types. If you want to use full_numbers pagination
+ *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
+ *     modify that selector.
+ *   Note that the path used for Images is relative. All images are by default located in
+ *     ../images/ - relative to this CSS file.
+ */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables features
+ */
+/* line 33, ../sass/table.scss */
+.dataTables_wrapper {
+  position: relative;
+  clear: both;
+  zoom: 1;
+  /* Feeling sorry for IE */
+}
+
+/* line 39, ../sass/table.scss */
+.dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 30px;
+  margin-left: -125px;
+  margin-top: -15px;
+  padding: 14px 0 2px 0;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  background-color: white;
+}
+
+/* line 55, ../sass/table.scss */
+.dataTables_length {
+  width: 40%;
+  float: left;
+}
+
+/* line 60, ../sass/table.scss */
+.dataTables_filter {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+/* line 66, ../sass/table.scss */
+.dataTables_info {
+  width: 60%;
+  float: left;
+}
+
+/* line 71, ../sass/table.scss */
+.dataTables_paginate {
+  float: right;
+  text-align: right;
+}
+
+/* Pagination nested */
+/* line 78, ../sass/table.scss */
+.paginate_disabled_previous, .paginate_enabled_previous,
+.paginate_disabled_next, .paginate_enabled_next {
+  height: 19px;
+  float: left;
+  cursor: pointer;
+  *cursor: hand;
+  color: #111 !important;
+}
+
+/* line 86, ../sass/table.scss */
+.paginate_disabled_previous:hover, .paginate_enabled_previous:hover,
+.paginate_disabled_next:hover, .paginate_enabled_next:hover {
+  text-decoration: none !important;
+}
+
+/* line 90, ../sass/table.scss */
+.paginate_disabled_previous:active, .paginate_enabled_previous:active,
+.paginate_disabled_next:active, .paginate_enabled_next:active {
+  outline: none;
+}
+
+/* line 95, ../sass/table.scss */
+.paginate_disabled_previous,
+.paginate_disabled_next {
+  color: #666 !important;
+}
+
+/* line 98, ../sass/table.scss */
+.paginate_disabled_previous, .paginate_enabled_previous {
+  padding-left: 23px;
+}
+
+/* line 101, ../sass/table.scss */
+.paginate_disabled_next, .paginate_enabled_next {
+  padding-right: 23px;
+  margin-left: 10px;
+}
+
+/* line 106, ../sass/table.scss */
+.paginate_disabled_previous {
+  background: url("../images/back_disabled.png") no-repeat top left;
+}
+
+/* line 110, ../sass/table.scss */
+.paginate_enabled_previous {
+  background: url("../images/back_enabled.png") no-repeat top left;
+}
+
+/* line 113, ../sass/table.scss */
+.paginate_enabled_previous:hover {
+  background: url("../images/back_enabled_hover.png") no-repeat top left;
+}
+
+/* line 117, ../sass/table.scss */
+.paginate_disabled_next {
+  background: url("../images/forward_disabled.png") no-repeat top right;
+}
+
+/* line 121, ../sass/table.scss */
+.paginate_enabled_next {
+  background: url("../images/forward_enabled.png") no-repeat top right;
+}
+
+/* line 124, ../sass/table.scss */
+.paginate_enabled_next:hover {
+  background: url("../images/forward_enabled_hover.png") no-repeat top right;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables display
+ */
+/* line 133, ../sass/table.scss */
+table.display {
+  margin: 0 auto;
+  clear: both;
+  width: 100%;
+  /* Note Firefox 3.5 and before have a bug with border-collapse
+   * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
+   * border-spacing: 0; is one possible option. Conditional-css.com is
+   * useful for this kind of thing
+   *
+   * Further note IE 6/7 has problems when calculating widths with border width.
+   * It subtracts one px relative to the other browsers from the first column, and
+   * adds one to the end...
+   *
+   * If you want that effect I'd suggest setting a border-top/left on th/td's and 
+   * then filling in the gaps with other borders.
+   */
+}
+
+/* line 152, ../sass/table.scss */
+table.display thead th {
+  padding: 3px 18px 3px 10px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  * cursor: hand;
+}
+
+/* line 160, ../sass/table.scss */
+table.display tfoot th {
+  padding: 3px 18px 3px 10px;
+  border-top: 1px solid black;
+  font-weight: bold;
+}
+
+/* line 166, ../sass/table.scss */
+table.display tr.heading2 td {
+  border-bottom: 1px solid #aaa;
+}
+
+/* line 170, ../sass/table.scss */
+table.display td {
+  padding: 3px 10px;
+}
+
+/* line 174, ../sass/table.scss */
+table.display td.center {
+  text-align: center;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables sorting
+ */
+/* line 184, ../sass/table.scss */
+.sorting_asc {
+  background: url("../images/sort_asc.png") no-repeat center right;
+}
+
+/* line 188, ../sass/table.scss */
+.sorting_desc {
+  background: url("../images/sort_desc.png") no-repeat center right;
+}
+
+/* line 192, ../sass/table.scss */
+.sorting {
+  background: url("../images/sort_both.png") no-repeat center right;
+}
+
+/* line 196, ../sass/table.scss */
+.sorting_asc_disabled {
+  background: url("../images/sort_asc_disabled.png") no-repeat center right;
+}
+
+/* line 200, ../sass/table.scss */
+.sorting_desc_disabled {
+  background: url("../images/sort_desc_disabled.png") no-repeat center right;
+}
+
+/* line 205, ../sass/table.scss */
+table.display thead th:active,
+table.display thead td:active {
+  outline: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables row classes
+ */
+/* line 215, ../sass/table.scss */
+table.display tr.odd.gradeA {
+  background-color: #ddffdd;
+}
+
+/* line 219, ../sass/table.scss */
+table.display tr.even.gradeA {
+  background-color: #eeffee;
+}
+
+/* line 223, ../sass/table.scss */
+table.display tr.odd.gradeC {
+  background-color: #ddddff;
+}
+
+/* line 227, ../sass/table.scss */
+table.display tr.even.gradeC {
+  background-color: #eeeeff;
+}
+
+/* line 231, ../sass/table.scss */
+table.display tr.odd.gradeX {
+  background-color: #ffdddd;
+}
+
+/* line 235, ../sass/table.scss */
+table.display tr.even.gradeX {
+  background-color: #ffeeee;
+}
+
+/* line 239, ../sass/table.scss */
+table.display tr.odd.gradeU {
+  background-color: #ddd;
+}
+
+/* line 243, ../sass/table.scss */
+table.display tr.even.gradeU {
+  background-color: #eee;
+}
+
+/* line 248, ../sass/table.scss */
+tr.odd {
+  background-color: #E2E4FF;
+}
+
+/* line 252, ../sass/table.scss */
+tr.even {
+  background-color: white;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Misc
+ */
+/* line 263, ../sass/table.scss */
+.dataTables_scroll {
+  clear: both;
+}
+
+/* line 267, ../sass/table.scss */
+.dataTables_scrollBody {
+  *margin-top: -1px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 272, ../sass/table.scss */
+.top, .bottom {
+  padding: 15px;
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+}
+
+/* line 278, ../sass/table.scss */
+.top .dataTables_info {
+  float: none;
+}
+
+/* line 282, ../sass/table.scss */
+.clear {
+  clear: both;
+}
+
+/* line 286, ../sass/table.scss */
+.dataTables_empty {
+  text-align: center;
+}
+
+/* line 290, ../sass/table.scss */
+tfoot input {
+  margin: 0.5em 0;
+  width: 100%;
+  color: #444;
+}
+
+/* line 296, ../sass/table.scss */
+tfoot input.search_init {
+  color: #999;
+}
+
+/* line 300, ../sass/table.scss */
+td.group {
+  background-color: #d1cfd0;
+  border-bottom: 2px solid #A19B9E;
+  border-top: 2px solid #A19B9E;
+}
+
+/* line 306, ../sass/table.scss */
+td.details {
+  background-color: #d1cfd0;
+  border: 2px solid #A19B9E;
+}
+
+/* line 312, ../sass/table.scss */
+.example_alt_pagination div.dataTables_info {
+  width: 40%;
+}
+
+/* line 316, ../sass/table.scss */
+.paging_full_numbers {
+  width: 400px;
+  height: 22px;
+  line-height: 22px;
+}
+
+/* line 322, ../sass/table.scss */
+.paging_full_numbers a:active {
+  outline: none;
+}
+
+/* line 326, ../sass/table.scss */
+.paging_full_numbers a:hover {
+  text-decoration: none;
+}
+
+/* line 331, ../sass/table.scss */
+.paging_full_numbers a.paginate_button,
+.paging_full_numbers a.paginate_active {
+  border: 1px solid #aaa;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 2px 5px;
+  margin: 0 3px;
+  cursor: pointer;
+  *cursor: hand;
+  color: #333 !important;
+}
+
+/* line 342, ../sass/table.scss */
+.paging_full_numbers a.paginate_button {
+  background-color: #ddd;
+}
+
+/* line 346, ../sass/table.scss */
+.paging_full_numbers a.paginate_button:hover {
+  background-color: #ccc;
+  text-decoration: none !important;
+}
+
+/* line 351, ../sass/table.scss */
+.paging_full_numbers a.paginate_active {
+  background-color: #99B3FF;
+}
+
+/* line 355, ../sass/table.scss */
+table.display tr.even.row_selected td {
+  background-color: #B0BED9;
+}
+
+/* line 359, ../sass/table.scss */
+table.display tr.odd.row_selected td {
+  background-color: #9FAFD1;
+}
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+/* line 368, ../sass/table.scss */
+tr.odd td.sorting_1 {
+  background-color: #D3D6FF;
+}
+
+/* line 372, ../sass/table.scss */
+tr.odd td.sorting_2 {
+  background-color: #DADCFF;
+}
+
+/* line 376, ../sass/table.scss */
+tr.odd td.sorting_3 {
+  background-color: #E0E2FF;
+}
+
+/* line 380, ../sass/table.scss */
+tr.even td.sorting_1 {
+  background-color: #EAEBFF;
+}
+
+/* line 384, ../sass/table.scss */
+tr.even td.sorting_2 {
+  background-color: #F2F3FF;
+}
+
+/* line 388, ../sass/table.scss */
+tr.even td.sorting_3 {
+  background-color: #F9F9FF;
+}
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+/* line 403, ../sass/table.scss */
+tr.odd.gradeA td.sorting_1 {
+  background-color: #c4ffc4;
+}
+
+/* line 407, ../sass/table.scss */
+tr.odd.gradeA td.sorting_2 {
+  background-color: #d1ffd1;
+}
+
+/* line 411, ../sass/table.scss */
+tr.odd.gradeA td.sorting_3 {
+  background-color: #d1ffd1;
+}
+
+/* line 415, ../sass/table.scss */
+tr.even.gradeA td.sorting_1 {
+  background-color: #d5ffd5;
+}
+
+/* line 419, ../sass/table.scss */
+tr.even.gradeA td.sorting_2 {
+  background-color: #e2ffe2;
+}
+
+/* line 423, ../sass/table.scss */
+tr.even.gradeA td.sorting_3 {
+  background-color: #e2ffe2;
+}
+
+/* line 427, ../sass/table.scss */
+tr.odd.gradeC td.sorting_1 {
+  background-color: #c4c4ff;
+}
+
+/* line 431, ../sass/table.scss */
+tr.odd.gradeC td.sorting_2 {
+  background-color: #d1d1ff;
+}
+
+/* line 435, ../sass/table.scss */
+tr.odd.gradeC td.sorting_3 {
+  background-color: #d1d1ff;
+}
+
+/* line 439, ../sass/table.scss */
+tr.even.gradeC td.sorting_1 {
+  background-color: #d5d5ff;
+}
+
+/* line 443, ../sass/table.scss */
+tr.even.gradeC td.sorting_2 {
+  background-color: #e2e2ff;
+}
+
+/* line 447, ../sass/table.scss */
+tr.even.gradeC td.sorting_3 {
+  background-color: #e2e2ff;
+}
+
+/* line 451, ../sass/table.scss */
+tr.odd.gradeX td.sorting_1 {
+  background-color: #ffc4c4;
+}
+
+/* line 455, ../sass/table.scss */
+tr.odd.gradeX td.sorting_2 {
+  background-color: #ffd1d1;
+}
+
+/* line 459, ../sass/table.scss */
+tr.odd.gradeX td.sorting_3 {
+  background-color: #ffd1d1;
+}
+
+/* line 463, ../sass/table.scss */
+tr.even.gradeX td.sorting_1 {
+  background-color: #ffd5d5;
+}
+
+/* line 467, ../sass/table.scss */
+tr.even.gradeX td.sorting_2 {
+  background-color: #ffe2e2;
+}
+
+/* line 471, ../sass/table.scss */
+tr.even.gradeX td.sorting_3 {
+  background-color: #ffe2e2;
+}
+
+/* line 475, ../sass/table.scss */
+tr.odd.gradeU td.sorting_1 {
+  background-color: #c4c4c4;
+}
+
+/* line 479, ../sass/table.scss */
+tr.odd.gradeU td.sorting_2 {
+  background-color: #d1d1d1;
+}
+
+/* line 483, ../sass/table.scss */
+tr.odd.gradeU td.sorting_3 {
+  background-color: #d1d1d1;
+}
+
+/* line 487, ../sass/table.scss */
+tr.even.gradeU td.sorting_1 {
+  background-color: #d5d5d5;
+}
+
+/* line 491, ../sass/table.scss */
+tr.even.gradeU td.sorting_2 {
+  background-color: #e2e2e2;
+}
+
+/* line 495, ../sass/table.scss */
+tr.even.gradeU td.sorting_3 {
+  background-color: #e2e2e2;
+}
+
+/*
+ * Row highlighting example
+ */
+/* line 503, ../sass/table.scss */
+.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+  background-color: #ECFFB3;
+}
+
+/* line 507, ../sass/table.scss */
+.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+  background-color: #E6FF99;
+}
+
+/* line 511, ../sass/table.scss */
+.ex_highlight_row #example tr.even:hover {
+  background-color: #ECFFB3;
+}
+
+/* line 515, ../sass/table.scss */
+.ex_highlight_row #example tr.even:hover td.sorting_1 {
+  background-color: #DDFF75;
+}
+
+/* line 519, ../sass/table.scss */
+.ex_highlight_row #example tr.even:hover td.sorting_2 {
+  background-color: #E7FF9E;
+}
+
+/* line 523, ../sass/table.scss */
+.ex_highlight_row #example tr.even:hover td.sorting_3 {
+  background-color: #E2FF89;
+}
+
+/* line 527, ../sass/table.scss */
+.ex_highlight_row #example tr.odd:hover {
+  background-color: #E6FF99;
+}
+
+/* line 531, ../sass/table.scss */
+.ex_highlight_row #example tr.odd:hover td.sorting_1 {
+  background-color: #D6FF5C;
+}
+
+/* line 535, ../sass/table.scss */
+.ex_highlight_row #example tr.odd:hover td.sorting_2 {
+  background-color: #E0FF84;
+}
+
+/* line 539, ../sass/table.scss */
+.ex_highlight_row #example tr.odd:hover td.sorting_3 {
+  background-color: #DBFF70;
+}
+
+/*
+ * KeyTable
+ */
+/* line 547, ../sass/table.scss */
+table.KeyTable td {
+  border: 3px solid transparent;
+}
+
+/* line 551, ../sass/table.scss */
+table.KeyTable td.focus {
+  border: 3px solid #3366FF;
+}
+
+/* line 555, ../sass/table.scss */
+table.display tr.gradeA {
+  background-color: #eeffee;
+}
+
+/* line 559, ../sass/table.scss */
+table.display tr.gradeC {
+  background-color: #ddddff;
+}
+
+/* line 563, ../sass/table.scss */
+table.display tr.gradeX {
+  background-color: #ffdddd;
+}
+
+/* line 567, ../sass/table.scss */
+table.display tr.gradeU {
+  background-color: #ddd;
+}
+
+/* line 571, ../sass/table.scss */
+div.box {
+  height: 100px;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #8080FF;
+  background-color: #E5E5FF;
+}

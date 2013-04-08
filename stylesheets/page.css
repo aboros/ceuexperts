@@ -1,0 +1,107 @@
+/* line 3, ../sass/page.scss */
+html {
+  font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  /* Establishes a vertical rhythm unit using $base-line-height. */
+  line-height: 1.5em;
+}
+
+/* line 12, ../sass/page.scss */
+body {
+  background: white url(../images/header_bg.png) no-repeat scroll left top;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, ../sass/page.scss */
+a:link, a:visited, a:active {
+  color: #00a9d5;
+  text-decoration: none;
+}
+/* line 25, ../sass/page.scss */
+a:hover {
+  color: #0081a2;
+  text-decoration: none;
+  border-bottom: 1px dotted #00a9d5;
+}
+
+/* line 32, ../sass/page.scss */
+#page {
+  margin: 0 32px 32px;
+}
+
+/* line 36, ../sass/page.scss */
+#header {
+  height: 79px;
+  margin-bottom: 1em;
+}
+
+/* line 41, ../sass/page.scss */
+#description {
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+/* line 45, ../sass/page.scss */
+#footer {
+  border-top: 1px dotted #dedede;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+/* line 50, ../sass/page.scss */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  float: left;
+  height: 79px;
+  line-height: 79px;
+  margin: 0;
+}
+
+/* line 62, ../sass/page.scss */
+table#example {
+  font-size: 0.75em;
+  line-height: 2em;
+  margin-bottom: 32px;
+}
+/* line 66, ../sass/page.scss */
+table#example thead th {
+  border-bottom: none;
+}
+/* line 70, ../sass/page.scss */
+table#example tr.odd {
+  background-color: #dedede;
+}
+/* line 72, ../sass/page.scss */
+table#example tr.odd td.sorting_1 {
+  background-color: #ebebeb;
+}
+/* line 77, ../sass/page.scss */
+table#example tr.even td.sorting_1 {
+  background-color: #f2f2f2;
+}
+/* line 83, ../sass/page.scss */
+table#example td.name-first, table#example td.name-last {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+/* line 89, ../sass/page.scss */
+#example_filter {
+  width: auto;
+  float: none;
+  text-align: left;
+  padding: 1em;
+  background-color: #dedede;
+  width: 180px;
+  margin: 32px auto;
+}
