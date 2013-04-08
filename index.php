@@ -22,7 +22,7 @@
         "bPaginate": false,
         "sAjaxDataProp": "feed.entry",
         "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json",
-
+        
         "aoColumns": [                 
           { "mData": "gsx$lastname.$t", "sClass": "name-last" },
           { "mData": "gsx$firstname.$t", "sClass": "name-first" },
@@ -35,6 +35,25 @@
           { "mData": "gsx$tags.$t", "sClass": "tags" },
           { "mData": "gsx$telephone.$t", "sClass": "phone" },
         ],
+        
+        "aoColumnDefs": [
+          {
+            // `data` refers to the data for the cell (defined by `mData`, which
+            // defaults to the column being worked with, in this case is the first
+            // Using `row[0]` is equivalent.
+            "mRender": function ( data, type, row ) {
+              return '<h2>' + row.gsx$lastname.$t + ' ' + row.gsx$firstname.$t + '</h2><p>' + row.gsx$departmentunit.$t + '</p><p>' + row.gsx$title.$t + '</p>';
+            },
+            "aTargets": [ 0 ]
+          },
+          {
+            "mRender": function ( data, type, row) {
+              return '<p>' + row.gsx$email.$t + '</p><p>' + row.gsx$telephone.$t + '</p>';
+            },
+            "aTargets": [ 5 ]
+          },
+          { "bVisible": false,  "aTargets": [ 1, 2, 3, 9 ] },
+        ]
       } );
     } );
   </script>
@@ -58,12 +77,12 @@
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
       <thead>
         <tr>
-          <th>Last name</th>
+          <th>Name</th>
           <th>First name</th>
           <th>Department/Unit</th>
           <th>Title</th>
           <th>Specializations</th>
-          <th>Email</th>
+          <th>Contact</th>
           <th>Languages</th>
           <th>CEU Video</th>
           <th>Tags</th>

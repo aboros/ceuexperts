@@ -89,13 +89,8 @@ table#example tr.odd td.sorting_1 {
 table#example tr.even td.sorting_1 {
   background-color: #f2f2f2;
 }
-/* line 83, ../sass/page.scss */
-table#example td.name-first, table#example td.name-last {
-  font-size: 1.5em;
-  line-height: 2em;
-}
 
-/* line 89, ../sass/page.scss */
+/* line 85, ../sass/page.scss */
 #example_filter {
   width: auto;
   float: none;
