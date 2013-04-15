@@ -12,6 +12,7 @@
   </style>
   <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" src="js/linker.js"></script>
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       $('#example').dataTable( {
@@ -24,6 +25,9 @@
         "bSort": false,
         "sAjaxDataProp": "feed.entry",
         "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json",
+        "fnInitComplete": function(oSettings, json) {
+          $('table td.ceuvideo').linker({target: 'blank',});
+        },
         
         "aoColumns": [                 
           { "mData": "gsx$lastname.$t", "sClass": "name" },
