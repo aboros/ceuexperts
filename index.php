@@ -21,6 +21,7 @@
         "bLengthChange": false,
         "bInfo": false,
         "bPaginate": false,
+        "bSort": false,
         "sAjaxDataProp": "feed.entry",
         "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json",
         
