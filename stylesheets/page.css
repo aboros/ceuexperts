@@ -98,8 +98,12 @@ table#example td.ceuvideo {
   max-width: 200px;
   overflow: hidden;
 }
+/* line 89, ../sass/page.scss */
+table#example td.contact {
+  text-transform: lowercase;
+}
 
-/* line 92, ../sass/page.scss */
+/* line 95, ../sass/page.scss */
 #example_filter {
   width: auto;
   float: none;

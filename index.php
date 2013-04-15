@@ -29,7 +29,7 @@
           { "mData": "gsx$firstname.$t", "sClass": "name-first" },
           { "mData": "gsx$departmentunit.$t", "sClass": "unit" },
           { "mData": "gsx$specializations.$t", "sClass": "specializations" },
-          { "mData": "gsx$email.$t", "sClass": "email" },
+          { "mData": "gsx$email.$t", "sClass": "contact" },
           { "mData": "gsx$languages.$t", "sClass": "languages" },
           { "mData": "gsx$ceuvideo.$t", "sClass": "ceuvideo" },
           { "mData": "gsx$telephone.$t", "sClass": "phone" },

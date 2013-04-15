@@ -86,6 +86,9 @@ table#example {
       max-width: 200px;
       overflow: hidden;
     }
+    &.contact {
+      text-transform: lowercase;
+    }
   }
 }
 
