@@ -83,7 +83,7 @@
           <th>Specializations</th>
           <th>Contact</th>
           <th>Languages</th>
-          <th>CEU Video</th>
+          <th>Video &amp; Related links</th>
           <th>Telephone</th>
         </tr>
       </thead>
