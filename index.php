@@ -72,7 +72,7 @@
       <h1>CEU Faculty Experts</h1>
     </div>
     <div id="description">
-      <p>At vero eos et accusam et justo duo dolores et ea rebum. <a href="#">Stet clita kasd gubergren, no sea takimata</a> sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+      <p>CEU experts can comment on a wide variety of topics from EU politics to innovation in business. Highly respected leaders in their fields, CEU faculty come from 40 countries and speak numerous languages. Using the keyword search below, you can find an expert by area of specialization, department, or name. The e-mail structure is as follows: lastname.firstinitial@ceu.hu (i.e. sharkeyc@ceu.hu). The main CEU phone number is +1 36 327-3000 (operator). The 328 exchange is also used at CEU. Most professors can be reached at their direct extensions (i.e. 327-2321). Please contact one of our media relations professionals for additional information: Ildiko Rull (Hungarian media relations) extension 3800 or Colleen Sharkey (international media relations) extension 2321.<br />To view recent examples of CEU experts in the media, visit <a href="https://www.ceu.hu/news/archive/5882" title="CEU in the Hungarian Media">CEU in the Hungarian Media</a> and <a href="https://www.ceu.hu/news/archive/5780" title="CEU in the International Media">CEU in the International Media.</a></p>
     </div>
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
       <thead>
@@ -90,9 +90,6 @@
       <tbody>
       </tbody>
     </table>
-    <div id="footer">
-      <p>At vero eos et accusam et justo duo dolores et ea rebum. <a href="#">Stet clita kasd gubergren, no sea takimata</a> sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-    </div>
   </div>
 </body>
 <script type="text/javascript">
