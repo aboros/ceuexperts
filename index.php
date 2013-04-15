@@ -28,12 +28,10 @@
           { "mData": "gsx$lastname.$t", "sClass": "name" },
           { "mData": "gsx$firstname.$t", "sClass": "name-first" },
           { "mData": "gsx$departmentunit.$t", "sClass": "unit" },
-          { "mData": "gsx$title.$t", "sClass": "title" },
           { "mData": "gsx$specializations.$t", "sClass": "specializations" },
           { "mData": "gsx$email.$t", "sClass": "email" },
           { "mData": "gsx$languages.$t", "sClass": "languages" },
           { "mData": "gsx$ceuvideo.$t", "sClass": "ceuvideo" },
-          { "mData": "gsx$tags.$t", "sClass": "tags" },
           { "mData": "gsx$telephone.$t", "sClass": "phone" },
         ],
         
@@ -51,9 +49,9 @@
             "mRender": function ( data, type, row) {
               return '<p>' + row.gsx$email.$t + '</p><p>' + row.gsx$telephone.$t + '</p>';
             },
-            "aTargets": [ 5 ]
+            "aTargets": [ 4 ]
           },
-          { "bVisible": false,  "aTargets": [ 1, 2, 3, 9 ] },
+          { "bVisible": false,  "aTargets": [ 1, 2, 7 ] },
         ]
       } );
     } );
@@ -81,12 +79,10 @@
           <th>Name</th>
           <th>First name</th>
           <th>Department/Unit</th>
-          <th>Title</th>
           <th>Specializations</th>
           <th>Contact</th>
           <th>Languages</th>
           <th>CEU Video</th>
-          <th>Tags</th>
           <th>Telephone</th>
         </tr>
       </thead>
