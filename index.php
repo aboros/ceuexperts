@@ -43,7 +43,7 @@
             // defaults to the column being worked with, in this case is the first
             // Using `row[0]` is equivalent.
             "mRender": function ( data, type, row ) {
-              return '<h2>' + row.gsx$lastname.$t + ' ' + row.gsx$firstname.$t + '</h2><p>' + row.gsx$departmentunit.$t + '</p><p>' + row.gsx$title.$t + '</p>';
+              return '<h2>' + row.gsx$lastname.$t + ' ' + row.gsx$firstname.$t + '</h2><p>' + row.gsx$departmentunit.$t + '</p>';
             },
             "aTargets": [ 0 ]
           },
