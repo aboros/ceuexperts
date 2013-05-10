@@ -36,6 +36,14 @@ a {
 #header {
   height: 79px;
   margin-bottom: 1em;
+  #logo {
+    display: block;
+    float: right;
+    margin-top: 15px;
+    &:hover {
+      border-bottom: none;
+    }
+  }
 }
 
 #description {
