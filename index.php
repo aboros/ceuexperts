@@ -16,28 +16,25 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       $('#example').dataTable( {
-        "bServerSide": false,
         "bProcessing": true,
         "iDisplayLength": 100,
         "bLengthChange": false,
         "bInfo": false,
         "bPaginate": false,
         "bSort": false,
-        "sAjaxDataProp": "feed.entry",
-        "sAjaxSource": "https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json",
         "fnInitComplete": function(oSettings, json) {
-          $('table td.ceuvideo').linker({target: 'blank',});
+          $('table td.ceuvideo').linker({target: 'blank'});
         },
-        
-        "aoColumns": [                 
-          { "mData": "gsx$lastname.$t", "sClass": "name" },
-          { "mData": "gsx$firstname.$t", "sClass": "name-first" },
-          { "mData": "gsx$departmentunit.$t", "sClass": "unit" },
-          { "mData": "gsx$specializations.$t", "sClass": "specializations" },
-          { "mData": "gsx$email.$t", "sClass": "contact" },
-          { "mData": "gsx$languages.$t", "sClass": "languages" },
-          { "mData": "gsx$ceuvideo.$t", "sClass": "ceuvideo" },
-          { "mData": "gsx$telephone.$t", "sClass": "phone" },
+
+        "aoColumns": [
+          { "mData": "lastname", "sClass": "name" },
+          { "mData": "firstname", "sClass": "name-first" },
+          { "mData": "departmentunit", "sClass": "unit" },
+          { "mData": "specializations", "sClass": "specializations" },
+          { "mData": "email", "sClass": "contact" },
+          { "mData": "languages", "sClass": "languages" },
+          { "mData": "ceuvideo", "sClass": "ceuvideo" },
+          { "mData": "telephone", "sClass": "phone" }
         ],
         
         "aoColumnDefs": [
@@ -46,17 +43,20 @@
             // defaults to the column being worked with, in this case is the first
             // Using `row[0]` is equivalent.
             "mRender": function ( data, type, row ) {
-              return '<h2>' + row.gsx$lastname.$t + ', ' + row.gsx$firstname.$t + '</h2><p>' + row.gsx$departmentunit.$t + '</p>';
+              return '<h2>' + row.lastname + ', ' + row.firstname + '</h2><p>' + row.departmentunit + '</p>';
             },
             "aTargets": [ 0 ]
           },
           {
             "mRender": function ( data, type, row) {
-              return '<p>' + row.gsx$email.$t + '</p><p>' + row.gsx$telephone.$t + '</p>';
+              return '<p>' + row.email + '</p><p>' + row.telephone + '</p>';
             },
             "aTargets": [ 4 ]
           },
-          { "bVisible": false,  "aTargets": [ 1, 2, 7 ] },
+          {
+            "bVisible": false,
+            "aTargets": [ 1, 2, 7 ]
+          }
         ]
       } );
     } );
@@ -93,6 +93,26 @@
         </tr>
       </thead>
       <tbody>
+        <?php
+          $url = 'https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json';
+          $file = file_get_contents($url);
+
+          $json = json_decode($file);
+          $rows = $json->{'feed'}->{'entry'};
+
+          foreach ($rows as $row) {
+            echo "<tr>\n";
+            echo "\t<td>" . $row->{'gsx$lastname'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$firstname'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$departmentunit'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$specializations'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$email'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$languages'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$ceuvideo'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$telephone'}->{'$t'} . "</td>\n";
+            echo "</tr>\n";
+          }
+        ?>
       </tbody>
     </table>
   </div>
@@ -111,3 +131,4 @@
 
 </script>
 </html>
+
