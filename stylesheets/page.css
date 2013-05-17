@@ -45,26 +45,31 @@ a:hover {
   display: block;
   float: right;
   margin-top: 15px;
+  border: 0;
 }
-/* line 43, ../sass/page.scss */
+/* line 44, ../sass/page.scss */
+#header #logo img {
+  border: 0;
+}
+/* line 47, ../sass/page.scss */
 #header #logo:hover {
   border-bottom: none;
 }
 
-/* line 49, ../sass/page.scss */
+/* line 53, ../sass/page.scss */
 #description {
   font-size: 0.75em;
   line-height: 2em;
 }
 
-/* line 53, ../sass/page.scss */
+/* line 57, ../sass/page.scss */
 #footer {
   border-top: 1px dotted #dedede;
   font-size: 0.75em;
   line-height: 2em;
 }
 
-/* line 58, ../sass/page.scss */
+/* line 62, ../sass/page.scss */
 h1 {
   font-size: 32px;
   font-weight: bold;
@@ -77,44 +82,44 @@ h1 {
   margin: 0;
 }
 
-/* line 70, ../sass/page.scss */
+/* line 74, ../sass/page.scss */
 table#example {
   font-size: 0.75em;
   line-height: 2em;
   margin-bottom: 32px;
 }
-/* line 74, ../sass/page.scss */
+/* line 78, ../sass/page.scss */
 table#example thead th {
   border-bottom: none;
   text-align: left;
 }
-/* line 79, ../sass/page.scss */
+/* line 83, ../sass/page.scss */
 table#example tr.odd {
   background-color: #dedede;
 }
-/* line 81, ../sass/page.scss */
+/* line 85, ../sass/page.scss */
 table#example tr.odd td.sorting_1 {
   background-color: #ebebeb;
 }
-/* line 86, ../sass/page.scss */
+/* line 90, ../sass/page.scss */
 table#example tr.even td.sorting_1 {
   background-color: #f2f2f2;
 }
-/* line 91, ../sass/page.scss */
+/* line 95, ../sass/page.scss */
 table#example td.name {
   width: 240px;
 }
-/* line 94, ../sass/page.scss */
+/* line 98, ../sass/page.scss */
 table#example td.ceuvideo {
   max-width: 200px;
   overflow: hidden;
 }
-/* line 98, ../sass/page.scss */
+/* line 102, ../sass/page.scss */
 table#example td.contact {
   text-transform: lowercase;
 }
 
-/* line 104, ../sass/page.scss */
+/* line 108, ../sass/page.scss */
 #example_filter {
   width: auto;
   float: none;
