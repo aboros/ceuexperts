@@ -4,7 +4,7 @@
 <head lang="en" xml:lang="en">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="language" content="english" />
-	<title>CEU Faculty Experts</title>
+	<title>CEU Locations</title>
   <style type="text/css" title="currentStyle">
   @import "stylesheets/table.css";
   @import "stylesheets/jquery.dataTables.css";
@@ -12,7 +12,6 @@
   </style>
   <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-  <script type="text/javascript" language="javascript" src="js/linker.js"></script>
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       $('#example').dataTable( {
@@ -21,43 +20,16 @@
         "bLengthChange": false,
         "bInfo": false,
         "bPaginate": false,
-        "bSort": false,
-        "fnInitComplete": function(oSettings, json) {
-          $('table td.ceuvideo').linker({target: 'blank'});
-        },
+        "bSort": true,
+
+        "aaSorting": [[ 0, "asc" ]],
 
         "aoColumns": [
-          { "mData": "lastname", "sClass": "name" },
-          { "mData": "firstname", "sClass": "name-first" },
-          { "mData": "departmentunit", "sClass": "unit" },
-          { "mData": "specializations", "sClass": "specializations" },
-          { "mData": "email", "sClass": "contact" },
-          { "mData": "languages", "sClass": "languages" },
-          { "mData": "ceuvideo", "sClass": "ceuvideo" },
-          { "mData": "telephone", "sClass": "phone" }
+          { "mData": "building", "sClass": "building" },
+          { "mData": "floor", "sClass": "floor" },
+          { "mData": "room", "sClass": "room" },
+          { "mData": "unit", "sClass": "unit" },
         ],
-        
-        "aoColumnDefs": [
-          {
-            // `data` refers to the data for the cell (defined by `mData`, which
-            // defaults to the column being worked with, in this case is the first
-            // Using `row[0]` is equivalent.
-            "mRender": function ( data, type, row ) {
-              return '<h2>' + row.lastname + ', ' + row.firstname + '</h2><p>' + row.departmentunit + '</p>';
-            },
-            "aTargets": [ 0 ]
-          },
-          {
-            "mRender": function ( data, type, row) {
-              return '<p>' + row.email + '</p><p>' + row.telephone + '</p>';
-            },
-            "aTargets": [ 4 ]
-          },
-          {
-            "bVisible": false,
-            "aTargets": [ 1, 2, 7 ]
-          }
-        ]
       } );
     } );
   </script>
@@ -73,28 +45,26 @@
 <body>
   <div id="page">
     <div id="header">
-      <h1>CEU Faculty Experts</h1>
+      <h1>CEU Locations</h1>
       <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/logo.png" /></a>
     </div>
     <div id="description">
-      <p>CEU faculty experts can comment on a wide variety of topics across the social sciences, humanities, business, law, environmental sciences, mathematics, and public policy. Respected leaders in their fields, our faculty members come from some 40 countries and speak numerous languages. Using the keyword search below, you can find an expert by area of specialization, unit, or name.  The main CEU phone number is +1 36 327-3000 (operator). For additional information, please contact one of our media relations professionals: <a href="mailto:sharkeyc@ceu.hu" title="Send e-mail">Colleen Sharkey</a> (international media), extension 2321, or <a href="mailto:rulli@ceu.hu" title="Send e-mail">Ildiko Rull</a> (Hungarian media) extension 3800.</p><p>For recent examples of CEU experts appearing in the media, visit <a href="https://www.ceu.hu/news/archive/5882" title="CEU in the Hungarian Media">CEU in the Hungarian Media</a> and <a href="https://www.ceu.hu/news/archive/5780" title="CEU in the International Media">CEU in the International Media.</a></p>
+      <h2>Disclaimer</h2>
+      <p>Disclaimer Proin pellentesque orci lectus, sit amet cursus velit varius sed. Nulla interdum enim sit amet ultrices tincidunt. Aenean suscipit, dolor ut vulputate sodales, mi nibh bibendum eros, ac consectetur mauris nulla sit amet lorem. Curabitur at rhoncus dolor. Sed orci felis, euismod id imperdiet id, sollicitudin at enim. Fusce ut ultrices ipsum, eget tincidunt lorem. Sed at posuere est. Praesent in diam at mi tincidunt eleifend. Integer vitae neque eros. Phasellus pulvinar eleifend elit porta aliquet.</p>
+      <p>Duis vulputate a neque at feugiat. Cras ut mauris feugiat, congue lacus nec, vestibulum tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras auctor pharetra mauris, id molestie est bibendum ut. Aliquam erat volutpat. Fusce purus felis, condimentum sit amet enim et, faucibus dapibus erat. Mauris consectetur porta augue a consequat. Maecenas ac ipsum rutrum, lacinia quam et, maximus dolor. Duis consequat porttitor pellentesque. Nulla pretium blandit auctor. Phasellus eu congue erat. </p>
     </div>
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>First name</th>
-          <th>Department/Unit</th>
-          <th>Specializations</th>
-          <th>Contact</th>
-          <th>Languages</th>
-          <th>Video &amp; Related links</th>
-          <th>Telephone</th>
+          <th>Building</th>
+          <th>Floor</th>
+          <th>Room</th>
+          <th>Unit</th>
         </tr>
       </thead>
       <tbody>
         <?php
-          $url = 'https://spreadsheets.google.com/feeds/list/0AqR2zsbu5T9qdEZTWjdUWjRLSWdFSFdqd09FSlFRcHc/od6/public/values?alt=json';
+          $url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/od6/public/values?alt=json';
           $file = file_get_contents($url);
 
           $json = json_decode($file);
@@ -102,14 +72,10 @@
 
           foreach ($rows as $row) {
             echo "<tr>\n";
-            echo "\t<td>" . $row->{'gsx$lastname'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$firstname'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$departmentunit'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$specializations'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$email'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$languages'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$ceuvideo'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$telephone'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$building'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$floor'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$room'}->{'$t'} . "</td>\n";
+            echo "\t<td>" . $row->{'gsx$unit'}->{'$t'} . "</td>\n";
             echo "</tr>\n";
           }
         ?>
