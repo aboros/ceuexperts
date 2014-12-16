@@ -23,13 +23,6 @@
         "bSort": true,
 
         "aaSorting": [[ 0, "asc" ]],
-
-        "aoColumns": [
-          { "mData": "building", "sClass": "building" },
-          { "mData": "floor", "sClass": "floor" },
-          { "mData": "room", "sClass": "room" },
-          { "mData": "unit", "sClass": "unit" },
-        ],
       } );
     } );
   </script>
@@ -56,26 +49,31 @@
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
       <thead>
         <tr>
-          <th>Building</th>
-          <th>Floor</th>
-          <th>Room</th>
-          <th>Unit</th>
+          <?php
+            $url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/od6/public/values?alt=json';
+            $file = file_get_contents($url);
+
+            $json = json_decode($file);
+            $rows = $json->{'feed'}->{'entry'};
+            $row = reset($rows);
+            foreach (get_object_vars($row) as $key => $item) {
+              if (substr($key, 0, 4) === 'gsx$') {
+                echo "\t<th>" . substr($key, 4) . "</th>\n";
+              }
+            }
+          ?>
         </tr>
       </thead>
       <tbody>
         <?php
-          $url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/od6/public/values?alt=json';
-          $file = file_get_contents($url);
-
-          $json = json_decode($file);
-          $rows = $json->{'feed'}->{'entry'};
-
           foreach ($rows as $row) {
+            //var_dump($row);
             echo "<tr>\n";
-            echo "\t<td>" . $row->{'gsx$building'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$floor'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$room'}->{'$t'} . "</td>\n";
-            echo "\t<td>" . $row->{'gsx$unit'}->{'$t'} . "</td>\n";
+            foreach (get_object_vars($row) as $key => $item) {
+              if (substr($key, 0, 4) === 'gsx$') {
+                echo "\t<td>" . $row->{$key}->{'$t'} . "</td>\n";
+              }
+            }
             echo "</tr>\n";
           }
         ?>
