@@ -42,9 +42,20 @@
       <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/logo.png" /></a>
     </div>
     <div id="description">
-      <h2>Disclaimer</h2>
-      <p>Disclaimer Proin pellentesque orci lectus, sit amet cursus velit varius sed. Nulla interdum enim sit amet ultrices tincidunt. Aenean suscipit, dolor ut vulputate sodales, mi nibh bibendum eros, ac consectetur mauris nulla sit amet lorem. Curabitur at rhoncus dolor. Sed orci felis, euismod id imperdiet id, sollicitudin at enim. Fusce ut ultrices ipsum, eget tincidunt lorem. Sed at posuere est. Praesent in diam at mi tincidunt eleifend. Integer vitae neque eros. Phasellus pulvinar eleifend elit porta aliquet.</p>
-      <p>Duis vulputate a neque at feugiat. Cras ut mauris feugiat, congue lacus nec, vestibulum tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras auctor pharetra mauris, id molestie est bibendum ut. Aliquam erat volutpat. Fusce purus felis, condimentum sit amet enim et, faucibus dapibus erat. Mauris consectetur porta augue a consequat. Maecenas ac ipsum rutrum, lacinia quam et, maximus dolor. Duis consequat porttitor pellentesque. Nulla pretium blandit auctor. Phasellus eu congue erat. </p>
+      <?php
+        // Hint:
+        // Ask for your worksheet feed by going to:
+        // https://spreadsheets.google.com/feeds/worksheets/YOUR_SPREADSHEET_ID/private/full
+        $sheet_url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/omsh57p/public/values?alt=json'; 
+        $sheet_file = file_get_contents($sheet_url);
+        $json = json_decode($sheet_file);
+
+        $title = $json->{'feed'}->{'entry'}[0]->{'gsx$title'}->{'$t'};
+        echo '<h2>' . $title . '</h2>';
+
+        $value =  $json->{'feed'}->{'entry'}[0]->{'gsx$value'}->{'$t'};
+        echo '<p>' . $value . '</p>';
+      ?>
     </div>
     <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
       <thead>
