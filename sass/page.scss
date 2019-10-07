@@ -1,16 +1,17 @@
 @import "base";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: $base-font-family;
-  font-size: 100% * ($base-font-size / 16px); /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  /* Establishes a vertical rhythm unit using $base-line-height. */
-  @include adjust-leading-to(1);
+  font-size: $base-font-size;
+  line-height: 1.15;
 }
 
 body {
-  background: white url(../images/header_bg.png) no-repeat scroll left top;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -29,18 +30,59 @@ a {
   }
 }
 
-#page {
-  margin: 0 $h1-font-size $h1-font-size;
+#masthead {
+  background-color: #343a40;
+  color: #eee;
+  font-size: 12px;
+  line-height: normal;
+  text-transform: uppercase;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0.7em;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      padding: 0 0.5em;
+
+      a {
+        color: #eee;
+        &.important {
+          border: 1px solid $color-link;
+          padding: 0 0.5em;
+          &:hover {
+            color: #333;
+            background-color: $color-link;
+
+          }
+        }
+      }
+    }
+  }
 }
 
 #header {
-  height: 79px;
+  position: relative;
+  background-color: $color-link;
   margin-bottom: 1em;
+  #ribbon {
+    position: absolute;
+    top: -5px;
+    left: 0;
+  }
+  #header-branding {
+    display: flex;
+    align-items: center;
+    padding: 31px 0;
+  }
   #logo {
     display: block;
-    float: right;
-    margin-top: 15px;
     border: 0;
+    margin: 0 15px;
     img {
       border: 0;
     }
@@ -48,6 +90,10 @@ a {
       border-bottom: none;
     }
   }
+}
+
+#main {
+  margin: 0 20px;
 }
 
 #description {
@@ -60,14 +106,11 @@ a {
 }
 
 h1 {
-  font-size: $h1-font-size;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 500;
   color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  float: left;
-  height: 79px;
-  line-height: 79px;
+  line-height: normal;
   margin: 0;
 }
 
@@ -78,6 +121,12 @@ table#example {
     th {
       border-bottom: none;
       text-align: left;
+    }
+  }
+  tbody tr:hover {
+    background-color: #F2E6B9;
+    td {
+      background-color: #F2E6B9 !important;
     }
   }
   tr.odd {

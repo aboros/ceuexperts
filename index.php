@@ -37,59 +37,75 @@
 ?>
 <body>
   <div id="page">
+    <div id="masthead">
+      <ul>
+        <li><a href="https://www.ceu.edu">CEU Home</a></li>
+        <li><a href="https://ceuedu.sharepoint.com/_layouts/15/sharepoint.aspx">Intranet</a></li>
+        <li><a href="https://giving.ceu.edu">Give</a></li>
+        <li><a href="https://www.ceu.edu/admissions/how-to-apply/checklist" class="important">Apply</a></li>
+        <li><a href="https://alumni.ceu.edu">Alumni</a></li>
+        <li><a href="https://careers.ceu.edu">Careers</a></li>
+        <li><a href="https://www.ceu.edu/hu/kee/about">Magyarul</a></li>
+      </ul>
+    </div>
     <div id="header">
-      <h1>CEU Locations</h1>
-      <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/logo.png" /></a>
+      <svg id="ribbon" data-name="ribbon" xmlns="http://www.w3.org/2000/svg" width="120" height="10" viewBox="0 0 120 10"><defs><style>.cls-1{fill:#40ac49;}.cls-2{fill:#f47721;}.cls-3{fill:#ec008c;}</style></defs><rect class="cls-1" width="120" height="10"></rect><rect class="cls-2" x="30" width="90" height="10"></rect><polygon class="cls-3" points="30 0 85 0 79 10 30 10 30 0"></polygon></svg>
+      <div id="header-branding">
+        <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/logo.svg" width="160" height="auto" /></a>
+        <h1>Locations</h1>
+      </div>
     </div>
-    <div id="description">
-      <?php
-        // Hint:
-        // Ask for your worksheet feed by going to:
-        // https://spreadsheets.google.com/feeds/worksheets/YOUR_SPREADSHEET_ID/private/full
-        $sheet_url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/omsh57p/public/values?alt=json'; 
-        $sheet_file = file_get_contents($sheet_url);
-        $json = json_decode($sheet_file);
+    <div id="main">
+      <div id="description">
+        <?php
+          // Hint:
+          // Ask for your worksheet feed by going to:
+          // https://spreadsheets.google.com/feeds/worksheets/YOUR_SPREADSHEET_ID/private/full
+          $sheet_url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/omsh57p/public/values?alt=json';
+          $sheet_file = file_get_contents($sheet_url);
+          $json = json_decode($sheet_file);
 
-        $title = $json->{'feed'}->{'entry'}[0]->{'gsx$title'}->{'$t'};
-        echo '<h2>' . $title . '</h2>';
+          $title = $json->{'feed'}->{'entry'}[0]->{'gsx$title'}->{'$t'};
+          echo '<h2>' . $title . '</h2>';
 
-        $value =  $json->{'feed'}->{'entry'}[0]->{'gsx$value'}->{'$t'};
-        echo '<p>' . $value . '</p>';
-      ?>
-    </div>
-    <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-      <thead>
-        <tr>
-          <?php
-            $url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/od6/public/values?alt=json';
-            $file = file_get_contents($url);
+          $value =  $json->{'feed'}->{'entry'}[0]->{'gsx$value'}->{'$t'};
+          echo '<p>' . $value . '</p>';
+        ?>
+      </div>
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+        <thead>
+          <tr>
+            <?php
+              $url = 'https://spreadsheets.google.com/feeds/list/1YAzHpUb-h_NrbttEekh_hTBDqT_7Dxe9Czgg1_8l9V8/od6/public/values?alt=json';
+              $file = file_get_contents($url);
 
-            $json = json_decode($file);
-            $rows = $json->{'feed'}->{'entry'};
-            $row = reset($rows);
-            foreach (get_object_vars($row) as $key => $item) {
-              if (substr($key, 0, 4) === 'gsx$') {
-                echo "\t<th>" . substr($key, 4) . "</th>\n";
+              $json = json_decode($file);
+              $rows = $json->{'feed'}->{'entry'};
+              $row = reset($rows);
+              foreach (get_object_vars($row) as $key => $item) {
+                if (substr($key, 0, 4) === 'gsx$') {
+                  echo "\t<th>" . substr($key, 4) . "</th>\n";
+                }
               }
+            ?>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            foreach ($rows as $row) {
+              //var_dump($row);
+              echo "<tr>\n";
+              foreach (get_object_vars($row) as $key => $item) {
+                if (substr($key, 0, 4) === 'gsx$') {
+                  echo "\t<td>" . $row->{$key}->{'$t'} . "</td>\n";
+                }
+              }
+              echo "</tr>\n";
             }
           ?>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          foreach ($rows as $row) {
-            //var_dump($row);
-            echo "<tr>\n";
-            foreach (get_object_vars($row) as $key => $item) {
-              if (substr($key, 0, 4) === 'gsx$') {
-                echo "\t<td>" . $row->{$key}->{'$t'} . "</td>\n";
-              }
-            }
-            echo "</tr>\n";
-          }
-        ?>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
