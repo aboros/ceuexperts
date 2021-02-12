@@ -81,9 +81,9 @@
       <p>For media support in English and Hungarian, please contact Media Relations Manager <a href="mailto:rulli@ceu.edu">Ildiko Rull</a>. For media support in German, contact Communications Officer <a href="mailto:matkovica@ceu.edu">Anita Matkovic</a>.</p>
       <p>Recent examples of CEU expert commentary:
         <ul>
-          <li><a href="https://www.ceu.edu/news/ceu-in-the-international-media">CEU in the international media</a></li>
-          <li><a href="https://www.ceu.edu/category/ceu-austrian-media">CEU in the Austrian media</a></li>
-          <li><a href="https://www.ceu.edu/news/ceu-hungarian-media">CEU in the Hungarian media</a></li>
+          <li><a href="https://www.ceu.edu/taxonomy/term/111">CEU in the international media</a></li>
+          <li><a href="https://www.ceu.edu/taxonomy/term/453">CEU in the Austrian media</a></li>
+          <li><a href="https://www.ceu.edu/taxonomy/term/110">CEU in the Hungarian media</a></li>
         </ul>
       </p>
     </div>
