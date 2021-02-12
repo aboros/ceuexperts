@@ -73,8 +73,8 @@
 <body>
   <div id="page">
     <div id="header">
-      <h1>CEU Faculty Experts</h1>
-      <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/logo.png" /></a>
+      <a id="logo" title="Visit CEU Website" alt="Visit CEU Website" target="_blank" href="http://www.ceu.hu"><img title="CEU Logo" alt="CEU Logo" src="images/ceu-logo-white.svg" /></a>
+    <h1>CEU Faculty Experts</h1>
     </div>
     <div id="description">
       <p>CEU faculty are available for expert commentary on a wide variety of subjects across the social sciences and humanities, including politics, extremism, media, business, environmental sciences, network and cognitive science, and public policy. Respected leaders in their fields, our faculty come from some 40 countries and speak numerous languages. Using the keyword search below, you can find an expert by area of specialization, unit, or name. The main CEU phone number is <a href="tel:+43-1-25230">+43.1.25230</a> in Austria and <a href="tel:+36-1-327-3000">+36.1.327.3000</a> in Hungary.</p>

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: white url(../images/header_bg.png) no-repeat scroll left top;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
@@ -30,19 +30,22 @@ a {
 }
 
 #page {
-  margin: 0 $h1-font-size $h1-font-size;
+  margin: 0;
 }
 
 #header {
-  height: 79px;
+  background-color: $color-link;
   margin-bottom: 1em;
+  padding: 1em;
   #logo {
-    display: block;
-    float: right;
-    margin-top: 15px;
+    display: inline-block;
     border: 0;
+    width: 160px;
+    margin-right: 2em;
     img {
       border: 0;
+      max-width: 100%;
+      height: auto;
     }
     &:hover {
       border-bottom: none;
@@ -51,7 +54,7 @@ a {
 }
 
 #description {
-  @include adjust-font-size-to( 12px );
+  margin: 1em;
 }
 
 #footer {
@@ -60,14 +63,12 @@ a {
 }
 
 h1 {
+  display: inline-block;
   font-size: $h1-font-size;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  float: left;
-  height: 79px;
-  line-height: 79px;
   margin: 0;
 }
 
